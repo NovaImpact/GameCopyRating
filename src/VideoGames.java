@@ -1,13 +1,13 @@
 import java.time.LocalDate;
 
-private class VideoGames {
+public class VideoGames {
 
     int rank;
     String title;
     LocalDate releaseDate;
     boolean multiPlatform;
 
-    private VideoGames(int rank, String title, LocalDate releaseDate, boolean multiPlatform) {
+    VideoGames(int rank, String title, LocalDate releaseDate, boolean multiPlatform) {
         this.rank = rank;
         this.title = title;
         this.releaseDate = releaseDate;

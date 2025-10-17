@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-private class GameCopiesSold extends VideoGames {
+public class GameCopiesSold extends VideoGames {
 
     int copiesSold;
 
