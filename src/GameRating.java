@@ -1,4 +1,4 @@
-public class GameRating extends VideoGames {
+private class GameRating extends VideoGames {
     int metaScore;
     boolean RatedE;
 }
