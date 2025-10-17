@@ -1,20 +1,20 @@
 import java.time.LocalDate;
 
-private class VideoGames {
+public class VideoGames {
 
     int rank;
     String title;
     LocalDate releaseDate;
     boolean multiPlatform;
 
-    private VideoGames(int rank, String title, LocalDate releaseDate, boolean multiPlatform) {
+    public VideoGames(int rank, String title, LocalDate releaseDate, boolean multiPlatform) {
         this.rank = rank;
         this.title = title;
         this.releaseDate = releaseDate;
         this.multiPlatform = multiPlatform;
     }
 
-    private int getRank() {
+    public int getRank() {
         return rank;
     }
 
@@ -22,7 +22,7 @@ private class VideoGames {
         this.rank = rank;
     }
 
-    private String getTitle() {
+    public String getTitle() {
         return title;
     }
 
@@ -30,7 +30,7 @@ private class VideoGames {
         this.title = title;
     }
 
-    private LocalDate getReleaseDate() {
+    public LocalDate getReleaseDate() {
         return releaseDate;
     }
 
@@ -38,7 +38,7 @@ private class VideoGames {
         this.releaseDate = releaseDate;
     }
 
-    private boolean isMultiPlatform() {
+    public boolean isMultiPlatform() {
         return multiPlatform;
     }
 
@@ -46,25 +46,11 @@ private class VideoGames {
         this.multiPlatform = multiPlatform;
     }
 
-    private String toString() {
-
+    public String toString() {
+        String description = "Video Game: " + getTitle();
+        return description;
     }
 
-    private int toRank() {
-
-    }
-    private LocalDate toReleaseDate() {
-
-    }
-    private boolean toMultiPlatform() {
-
-    }
-    private boolean isMultiPlatform() {
-        return true
-    }
-    private boolean notMultiPlatform() {
-        return false
-    }
 
 
 

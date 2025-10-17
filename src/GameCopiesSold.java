@@ -1,20 +1,21 @@
 import java.time.LocalDate;
 
-private class GameCopiesSold extends VideoGames {
+public class GameCopiesSold extends VideoGames {
 
     int copiesSold;
 
-    private GameCopiesSold(int rank, String title, LocalDate releaseDate, boolean multiPlatform, int copiesSold) {
+    GameCopiesSold(int rank, String title, LocalDate releaseDate, boolean multiPlatform, int sold, int i, int copiesSold) {
         super(rank, title, releaseDate, multiPlatform);
         this.copiesSold = copiesSold;
     }
 
-    private int getCopiesSold() {
+    public int getCopiesSold() {
         return copiesSold;
     }
 
-    private void setCopiesSold(int copiesSold) {
+    public void setCopiesSold(int copiesSold) {
         this.copiesSold = copiesSold;
+
     }
 
 }
