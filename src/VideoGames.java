@@ -7,6 +7,7 @@ public class VideoGames {
     LocalDate releaseDate;
     boolean multiPlatform;
 
+    VideoGames(int rank, String title, LocalDate releaseDate, boolean multiPlatform) {
     public VideoGames(int rank, String title, LocalDate releaseDate, boolean multiPlatform) {
         this.rank = rank;
         this.title = title;
@@ -51,6 +52,21 @@ public class VideoGames {
         return description;
     }
 
+    private int toRank() {
+
+    }
+    private LocalDate toReleaseDate() {
+
+    }
+    private boolean toMultiPlatform() {
+
+    }
+    private boolean isMultiPlatform() {
+        return true
+    }
+    private boolean notMultiPlatform() {
+        return false
+    }
 
 
 
