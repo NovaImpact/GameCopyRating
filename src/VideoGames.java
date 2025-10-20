@@ -7,14 +7,23 @@ public class VideoGames {
     String title;
     LocalDate releaseDate;
     boolean multiPlatform;
+    static ArrayList<VideoGames> allVideoGames = new ArrayList<VideoGames>();
 
     VideoGames(int rank, String title, LocalDate releaseDate, boolean multiPlatform) {
         this.rank = rank;
         this.title = title;
         this.releaseDate = releaseDate;
         this.multiPlatform = multiPlatform;
+        allVideoGames.add(this);
     }
-        private static ArrayList<VideoGames> allVideoGames = new ArrayList<VideoGames>();
+
+    public static ArrayList<VideoGames> getAllVideoGames() {
+        return allVideoGames;
+    }
+
+    public static void setAllVideoGames(ArrayList<VideoGames> allVideoGames) {
+        VideoGames.allVideoGames = allVideoGames;
+    }
 
     public boolean isMultiPlatform() {
         return multiPlatform;
