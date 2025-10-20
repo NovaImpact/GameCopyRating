@@ -12,6 +12,7 @@ public class Main {
         GameCopiesSold Game2 = new GameCopiesSold(2, "Grand Theft Auto V", game2Date,true,215,000,000);
 
         System.out.println(Game1);
+        System.out.println(Game2);
 
 
     }
