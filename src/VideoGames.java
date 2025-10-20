@@ -9,13 +9,16 @@ public class VideoGames {
     boolean multiPlatform;
 
     VideoGames(int rank, String title, LocalDate releaseDate, boolean multiPlatform) {
-    public VideoGames(int rank, String title, LocalDate releaseDate, boolean multiPlatform) {
         this.rank = rank;
         this.title = title;
         this.releaseDate = releaseDate;
         this.multiPlatform = multiPlatform;
     }
         private static ArrayList<VideoGames> allVideoGames = new ArrayList<VideoGames>();
+
+    public boolean isMultiPlatform() {
+        return multiPlatform;
+    }
 
     public int getRank() {
         return rank;
@@ -41,9 +44,6 @@ public class VideoGames {
         this.releaseDate = releaseDate;
     }
 
-    public boolean isMultiPlatform() {
-        return multiPlatform;
-    }
 
     private void setMultiPlatform(boolean multiPlatform) {
         this.multiPlatform = multiPlatform;
