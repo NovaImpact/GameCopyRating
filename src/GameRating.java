@@ -9,14 +9,10 @@ public class GameRating extends VideoGames {
     public GameRating(int rank, String title, LocalDate releaseDate, boolean multiPlatform) {
         super(rank, title, releaseDate, multiPlatform);
     }
-    void setMetaScore(int newMetaScore) {
-        ArrayList<Integer> MetaScore = new ArrayList<>(10);
-        MetaScore.add(99);
-        MetaScore.add(98);
-        MetaScore.add(97);
+
+    public String toString() {
+        //String
+        return super.toString();
     }
 }
-//public class GameRating extends VideoGames {
-    //int metaScore;
-  //  boolean RatedE;
-//}
+
