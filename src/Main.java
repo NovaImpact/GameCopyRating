@@ -1,4 +1,6 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
+
 
 import java.time.LocalDate;
 import java.time.chrono.ChronoLocalDate;
@@ -14,14 +16,17 @@ public class Main {
         GameRating game2 = new GameRating(2,"SoulCalibur", game2Date,true);
 System.out.println(game1);
 
+        ArrayList<VideoGames> allVideoGames = new ArrayList<VideoGames>();
 
-        LocalDate game1Date = LocalDate.of(2011, 11, 18);
+        game1Date = LocalDate.of(2011, 11, 18);
         GameCopiesSold Game1 = new GameCopiesSold(1, "Minecraft", game1Date,true,350,000,000);
-        LocalDate game2Date = LocalDate.of(2013, 9, 17);
+        game2Date = LocalDate.of(2013, 9, 17);
         GameCopiesSold Game2 = new GameCopiesSold(2, "Grand Theft Auto V", game2Date,true,215,000,000);
 
-        System.out.println(Game1);
-        System.out.println(Game2);
+        allVideoGames.add(Game1);
+        allVideoGames.add(Game2);
+
+        System.out.println(allVideoGames);
 
 
     }

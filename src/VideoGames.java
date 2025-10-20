@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class VideoGames {
 
@@ -14,6 +15,7 @@ public class VideoGames {
         this.releaseDate = releaseDate;
         this.multiPlatform = multiPlatform;
     }
+        private static ArrayList<VideoGames> allVideoGames = new ArrayList<VideoGames>();
 
     public int getRank() {
         return rank;
@@ -52,22 +54,6 @@ public class VideoGames {
                 ", Title: " + title +
                 ", Release Date: " + releaseDate +
                 ", Multi-Platform: " + multiPlatform;
-    }
-
-    private int toRank() {
-
-    }
-    private LocalDate toReleaseDate() {
-
-    }
-    private boolean toMultiPlatform() {
-
-    }
-    private boolean isMultiPlatform() {
-        return true
-    }
-    private boolean notMultiPlatform() {
-        return false
     }
 
 
