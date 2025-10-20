@@ -48,8 +48,10 @@ public class VideoGames {
     }
 
     public String toString() {
-        String description = "Video Game: " + getTitle();
-        return description;
+        return "Rank: " + rank +
+                ", Title: " + title +
+                ", Release Date: " + releaseDate +
+                ", Multi-Platform: " + multiPlatform;
     }
 
     private int toRank() {

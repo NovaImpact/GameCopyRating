@@ -13,6 +13,8 @@ public class Main {
         LocalDate game2Date = LocalDate.of(1999, 9, 8);
         GameRating game2 = new GameRating(2,"SoulCalibur", game2Date,true);
 System.out.println(game1);
+
+
         LocalDate game1Date = LocalDate.of(2011, 11, 18);
         GameCopiesSold Game1 = new GameCopiesSold(1, "Minecraft", game1Date,true,350,000,000);
         LocalDate game2Date = LocalDate.of(2013, 9, 17);

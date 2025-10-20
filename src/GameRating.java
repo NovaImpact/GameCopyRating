@@ -16,3 +16,7 @@ public class GameRating extends VideoGames {
         MetaScore.add(97);
     }
 }
+//public class GameRating extends VideoGames {
+    //int metaScore;
+  //  boolean RatedE;
+//}
