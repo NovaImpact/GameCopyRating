@@ -3,11 +3,11 @@ import java.util.ArrayList;
 
 public class VideoGames {
 
-    int rank;
-    String title;
-    LocalDate releaseDate;
-    boolean multiPlatform;
-    static ArrayList<VideoGames> allVideoGames = new ArrayList<VideoGames>();
+     int rank;
+     String title;
+     LocalDate releaseDate;
+     boolean multiPlatform;
+     static ArrayList<VideoGames> allVideoGames = new ArrayList<VideoGames>();
 
     VideoGames(int rank, String title, LocalDate releaseDate, boolean multiPlatform) {
         this.rank = rank;
