@@ -1,63 +1,81 @@
 import java.io.File;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GameCopiesSold extends VideoGames {
 
-    int copiesSold;
+    private int copiesSold;
+    private static ArrayList<GameCopiesSold> allGameCopies = new ArrayList<GameCopiesSold>();
 
-    GameCopiesSold(int rank, String title, LocalDate releaseDate, boolean multiPlatform, int sold, int i, int copiesSold) {
+    // Constructor
+    public GameCopiesSold(int rank, String title, LocalDate releaseDate, boolean multiPlatform, int copiesSold) {
         super(rank, title, releaseDate, multiPlatform);
         this.copiesSold = copiesSold;
+        allGameCopies.add(this); // track all objects
     }
 
+    // Getter and setter for copiesSold
     public int getCopiesSold() {
         return copiesSold;
     }
 
     public void setCopiesSold(int copiesSold) {
         this.copiesSold = copiesSold;
+    }
 
+    // Getter and setter for all objects
+    public static ArrayList<GameCopiesSold> getAllGameCopies() {
+        return allGameCopies;
+    }
+
+    public static void setAllGameCopies(ArrayList<GameCopiesSold> allGameCopies) {
+        GameCopiesSold.allGameCopies = allGameCopies;
     }
 
 
-    public static void readGameCopiesData() throws Exception {
-        GameCopiesSold.readGameCopiesData();
+    public String toString() {
+        String superString = super.toString();
+        return superString + ", Copies Sold: " + copiesSold + "M";
+    }
 
+    // Read data from file
+    public static void readGameCopiesData() throws Exception {
         File myData = new File("GameCopiesData");
         Scanner myReader = new Scanner(myData);
+        String firstLine = myReader.nextLine();
+
         while (myReader.hasNextLine()) {
-            String data = myReader.nextLine();
-            Scanner lineScanner = new Scanner(data);
-            lineScanner.useDelimiter( "\t");
-           // System.out.println(data);
+            String dataLine = myReader.nextLine();
+            System.out.println(dataLine);
 
-            String copyChunk = lineScanner.next();
-            copyChunk = copyChunk.replace("M" , "");
-
-            LocalDate game1LocalDate = LocalDate.of(2011, 11, 18);
-
-            int rank = Integer.parseInt(copyChunk);
-
-            String title = lineScanner.next();
-            int copiesSold = lineScanner.nextInt();
-            boolean multiPlatform = lineScanner.nextBoolean();
+            Scanner lineScanner = new Scanner(dataLine);
+            lineScanner.useDelimiter("\t");
 
 
-
-        }
-
-
+                int rank = lineScanner.nextInt();
+                String title = lineScanner.next();
 
 
-        for (int i = 0; i < 0; i = i + 1) {
-            int rank = 1;
-            String title = "Minecraft";
-            int copiesSoldMillions = 300;
-            int year = 2011;
-            LocalDate film1LocalDate = LocalDate.of(year, 11, 18);
-            boolean multiPlatform = true;
+                String copiesChunk = lineScanner.next().replaceAll("[^0-9]", "");
+                int copiesSold = copiesChunk.isEmpty() ? 0 : Integer.parseInt(copiesChunk);
+
+
+                boolean multiPlatform = dataLine.toLowerCase().contains("multi-platform");
+
+                int year = 2000;
+                if (lineScanner.hasNext()) {
+                    String yearChunk = lineScanner.next().replaceAll("[^0-9]", "");
+                }
+
+                LocalDate gameDate = LocalDate.of(year, 1, 1);
+
+                // create object
+                new GameCopiesSold(rank, title, gameDate, multiPlatform, copiesSold);
+
 
         }
+
+
     }
 }
