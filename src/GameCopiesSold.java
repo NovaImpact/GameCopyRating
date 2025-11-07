@@ -46,36 +46,36 @@ public class GameCopiesSold extends VideoGames {
         String firstLine = myReader.nextLine();
 
         while (myReader.hasNextLine()) {
-            String dataLine = myReader.nextLine();
-            System.out.println(dataLine);
+            String dataLine = myReader.nextLine().trim();
+            if (dataLine.isEmpty()) continue; // skip blank lines
 
-            Scanner lineScanner = new Scanner(dataLine);
-            lineScanner.useDelimiter("\t");
+            // Split on any amount of whitespace (tabs or spaces)
+            String[] parts = dataLine.split("\\s+");
+            if (parts.length < 3) continue; // skip malformed lines
 
-
-                int rank = lineScanner.nextInt();
-                String title = lineScanner.next();
-
-
-                String copiesChunk = lineScanner.next().replaceAll("[^0-9]", "");
+            try {
+                int rank = Integer.parseInt(parts[0]);
+                String title = parts[1];
+                String copiesChunk = parts[2].replaceAll("[^0-9]", "");
                 int copiesSold = copiesChunk.isEmpty() ? 0 : Integer.parseInt(copiesChunk);
 
-
+                // crude heuristic for platform detection
                 boolean multiPlatform = dataLine.toLowerCase().contains("multi-platform");
 
                 int year = 2000;
-                if (lineScanner.hasNext()) {
-                    String yearChunk = lineScanner.next().replaceAll("[^0-9]", "");
+                for (String p : parts) {
+                    if (p.matches("\\d{4}")) {  // find a 4-digit year
+                        year = Integer.parseInt(p);
+                        break;
+                    }
                 }
 
                 LocalDate gameDate = LocalDate.of(year, 1, 1);
-
-                // create object
                 new GameCopiesSold(rank, title, gameDate, multiPlatform, copiesSold);
-
-
+            } catch (NumberFormatException e) {
+                System.out.println("Skipping malformed line: " + dataLine);
+            }
         }
-
 
     }
 }
