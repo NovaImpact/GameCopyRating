@@ -1,15 +1,11 @@
 import java.time.LocalDate;
-import java.util.ArrayList;
 
-
-import java.time.LocalDate;
-import java.time.chrono.ChronoLocalDate;
-import java.util.Locale;
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) throws Exception {
+        GameRating.readGameRatingData();
+
+    System.out.println("Game Ratings Only: ");
+    for (VideoGames eachCopy : VideoGames.getAllVideoGames()) {
         LocalDate game1Date = LocalDate.of(1998, 11, 23);
         new GameRating(1, "The Legend of Zelda: Ocarina of Time", game1Date, false);
 
@@ -19,6 +15,7 @@ public class Main {
             System.out.println(eachCopy);
 
         }
+    }
     }
 
 }
